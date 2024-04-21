@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <h2>Listagem</h2>
+    <table>
+      <tr>
+        <th>Usuário</th>
+        <th>Ações</th>
+      </tr>
+      <% for(let i=0; i<result.length; i++) { %>
+      <tr>
+        <td><%= result[i].username %></td>
+        <td>
+          <form action="/delete" method="post">
+            <input type="hidden" name="id" value="<%= result[i]._id %>">
+            <button type="submit">Excluir</button>
+          </form>
+          <form action="/edit" method="get">
+            <input type="hidden" name="id" value="<%= result[i]._id %>">
+            <button type="submit">Editar</button>
+          </form>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+    <h2>Cadastro</h2>
+    <form action="save" method="post">
+      <p>
+        <label for="">Usuário:
+          <input type="text" name="username">
+        </label>
+      </p>
+      <p>
+        <label for="">Senha:
+          <input type="password" name="password">
+        </label>
+      </p>
+      <p>
+        <input type="submit" value="Salvar">
+      </p>
+    </form>
+  </body>
+</html>
