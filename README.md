@@ -8,7 +8,7 @@ Este é um projeto simples de CRUD (Create, Read, Update, Delete) utilizando Nod
 1. Clone este repositório em sua máquina local:
 
    ```
-   git clone https://github.com/seu-usuario/crud-mongodb.git
+   git clone https://github.com/tiagotiagoTiagotiago/CRUD-NODE.JS.git
    ```
 
 2. Navegue até o diretório do projeto:
